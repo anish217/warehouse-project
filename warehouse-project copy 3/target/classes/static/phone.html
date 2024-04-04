@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Table</title>
+    <link rel="stylesheet" href="phone.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">The Phone Warehouse</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+                <li><a href="warehouse.html">Warehouses</a></li>
+            </ul>
+        </div>  
+    </nav>
+    <h1>Phone Table</h1>
+    <table class="styled-table" id="phoneTable">
+        <!-- Table headers -->
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Brand</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <!-- Table body for phone data -->
+        <tbody id="phoneTableBody">
+            <!-- Phone table data will be populated here -->
+        </tbody>
+    </table>
+
+    <!-- Button to open form for adding a new phone -->
+    <button class="add-phone-button" onclick="openPhoneForm()">Add New Phone</button>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Form for adding a new phone -->
+    <div class="form-container" id="phoneFormContainer">
+        <h2>Add New Phone</h2>
+        <form id="phoneForm" onsubmit="submitPhoneForm(event)">
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" required><br>
+            
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" required><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Form for updating a phone -->
+    <div class="form-container" id="editPhoneFormContainer">
+        <h2>Edit Phone</h2>
+        <form id="editPhoneForm" onsubmit="submitEditPhoneForm(event)">
+            <input type="hidden" id="editPhoneId" name="id">
+            <label for="editBrand">Brand:</label>
+            <input type="text" id="editBrand" name="brand" required><br>
+            
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" name="name" required><br>
+            
+            <label for="editPrice">Price:</label>
+            <input type="number" id="editPrice" name="price" step="0.01" required><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script src="phone.js"></script>
+</body>
+</html>

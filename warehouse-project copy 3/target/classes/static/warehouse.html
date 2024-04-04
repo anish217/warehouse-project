@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warehouse Table</title>
+    <link rel="stylesheet" href="warehouse.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">The Phone Warehouse</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="phone.html">Phones</a></li>
+                <li><a href="inventory.html">Inventory</a></li>
+            </ul>
+        </div>  
+    </nav>
+    <h1>Warehouse Table</h1>
+    <table class="styled-table" id="warehouseTable">
+        <!-- Table headers -->
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Capacity</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <!-- Table body for warehouse data -->
+        <tbody id="warehouseTableBody">
+            <!-- Warehouse table data will be populated here -->
+        </tbody>
+    </table>
+
+    <!-- Button to open form for adding a new warehouse -->
+    <button class="add-warehouse-button" onclick="openWarehouseForm()">Add New Warehouse</button>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Form for adding a new warehouse -->
+    <div class="form-container" id="warehouseFormContainer">
+        <h2>Add New Warehouse</h2>
+        <form id="warehouseForm" onsubmit="submitWarehouseForm(event)">
+            <label for="warehouseName">Name:</label>
+            <input type="text" id="warehouseName" name="name" required><br>
+            
+            <label for="warehouseLocation">Location:</label>
+            <input type="text" id="warehouseLocation" name="location" required><br>
+            
+            <label for="warehouseCapacity">Capacity:</label>
+            <input type="number" id="warehouseCapacity" name="capacity" required><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- Form for updating a warehouse -->
+    <div class="form-container" id="editWarehouseFormContainer">
+        <h2>Edit Warehouse</h2>
+        <form id="editWarehouseForm" onsubmit="submitEditWarehouseForm(event)">
+            <input type="hidden" id="editWarehouseId" name="id">
+            <label for="editWarehouseName">Name:</label>
+            <input type="text" id="editWarehouseName" name="name" required><br>
+            
+            <label for="editWarehouseLocation">Location:</label>
+            <input type="text" id="editWarehouseLocation" name="location" required><br>
+            
+            <label for="editWarehouseCapacity">Capacity:</label>
+            <input type="number" id="editWarehouseCapacity" name="capacity" required><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <!-- JavaScript code -->
+    <script src="warehouse.js"></script>
+</body>
+</html>
