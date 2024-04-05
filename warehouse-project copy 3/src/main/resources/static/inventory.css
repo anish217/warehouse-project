@@ -95,6 +95,21 @@ h1 {
     color: #009879;
 }
 
+.add-inventory-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 24px; /* Increased padding for buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.add-inventory-button:hover {
+    background-color: #45a049;
+}
+
 button {
     background-color: #4CAF50;
     color: white;
