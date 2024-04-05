@@ -47,6 +47,14 @@ public class Inventory {
         this.quantity = quantity;
     }
 
+    public int quantityFromWarehouseId(int warehouseId){
+        
+        
+        
+        
+        return 0;
+    }
+
     
 
     // Constructors, getters, and setters

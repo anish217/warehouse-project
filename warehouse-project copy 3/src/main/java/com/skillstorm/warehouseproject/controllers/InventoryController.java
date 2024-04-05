@@ -37,6 +37,17 @@ public class InventoryController {
         Optional<Warehouse> warehouseOptional = warehouseRepository.findById(newInventory.getWarehouseId());
         if (!warehouseOptional.isPresent()) {
             throw new IllegalArgumentException("Warehouse ID " + newInventory.getWarehouseId() + " not found");
+        }else{
+            Warehouse warehouse = warehouseOptional.get();
+            int capacity = warehouse.getCapacity();
+            int quantity = inventoryRepository.sumQuantityByWarehouseId(newInventory.getWarehouseId());
+            System.out.println("Capacity Left After Upcoming Insertion: " + (capacity - (quantity + newInventory.getQuantity())));
+            if((capacity - (quantity + newInventory.getQuantity())) < 0 ){
+                throw new IllegalArgumentException("Capacity Full!");
+            }
+            
+
+
         }
 
         return inventoryRepository.save(newInventory);
